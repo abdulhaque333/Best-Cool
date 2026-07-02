@@ -49,6 +49,22 @@ a { text-decoration: none; color: inherit; }
   color: var(--white);
   box-shadow: 0 8px 20px rgba(37, 211, 102, 0.35);
 }
+.btn-viber {
+  background: #7360f2;
+  color: var(--white);
+  box-shadow: 0 8px 20px rgba(115, 96, 242, 0.35);
+}
+.btn-whatsapp,
+.btn-viber {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.btn-icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
 .btn-call {
   background: var(--white);
   color: var(--brand-blue);
@@ -124,6 +140,16 @@ a { text-decoration: none; color: inherit; }
   margin: 0 auto 32px;
   font-size: 1.1rem;
   color: rgba(255, 255, 255, 0.9);
+}
+.serving-area {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 999px;
+  padding: 8px 20px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin: 0 0 32px;
 }
 .hero-actions {
   display: flex;
@@ -211,6 +237,71 @@ a { text-decoration: none; color: inherit; }
   white-space: nowrap;
 }
 .pricing-cta { margin-top: 32px; }
+
+/* Steps / How it works */
+.steps {
+  padding: 70px 20px;
+  background: var(--light-bg);
+  text-align: center;
+}
+.pill {
+  display: inline-block;
+  background: rgba(30, 136, 199, 0.12);
+  color: var(--brand-blue);
+  border: 1px solid rgba(30, 136, 199, 0.3);
+  border-radius: 999px;
+  padding: 6px 18px;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin-bottom: 16px;
+}
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin-top: 48px;
+  position: relative;
+}
+.steps-grid::before {
+  content: "";
+  position: absolute;
+  top: 32px;
+  left: 16%;
+  right: 16%;
+  height: 2px;
+  background: rgba(30, 136, 199, 0.25);
+}
+.step {
+  position: relative;
+}
+.step-circle {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--sky-blue);
+  color: var(--white);
+  font-size: 1.6rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  box-shadow: 0 0 0 8px var(--light-bg), 0 8px 20px rgba(30, 136, 199, 0.35);
+  position: relative;
+  z-index: 1;
+}
+.step h3 {
+  margin: 0 0 10px;
+  font-size: 1.15rem;
+  color: var(--deep-blue);
+}
+.step p {
+  margin: 0 auto;
+  max-width: 280px;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
 
 /* Warranty */
 .warranty {
@@ -315,4 +406,6 @@ a { text-decoration: none; color: inherit; }
 @media (max-width: 640px) {
   .nav { display: none; }
   .warranty-inner { text-align: center; justify-content: center; }
+  .steps-grid { grid-template-columns: 1fr; gap: 40px; }
+  .steps-grid::before { display: none; }
 }
