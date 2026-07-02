@@ -1,0 +1,318 @@
+:root {
+  --deep-blue: #06255c;
+  --brand-blue: #0d4ea6;
+  --sky-blue: #1e88c7;
+  --teal: #3ecfcf;
+  --ink: #0b1b2b;
+  --muted: #5b6b7c;
+  --light-bg: #f4f8fb;
+  --white: #ffffff;
+  --radius: 16px;
+  --shadow: 0 10px 30px rgba(6, 37, 92, 0.12);
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: var(--ink);
+  background: var(--white);
+  line-height: 1.55;
+}
+img { max-width: 100%; display: block; }
+a { text-decoration: none; color: inherit; }
+.container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 14px 28px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 1rem;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.btn:hover { transform: translateY(-2px); }
+.btn-primary {
+  background: linear-gradient(135deg, #ff8a3d, #ff6b6b);
+  color: var(--white);
+  box-shadow: 0 8px 20px rgba(255, 107, 107, 0.35);
+}
+.btn-whatsapp {
+  background: #25d366;
+  color: var(--white);
+  box-shadow: 0 8px 20px rgba(37, 211, 102, 0.35);
+}
+.btn-call {
+  background: var(--white);
+  color: var(--brand-blue);
+  padding: 10px 20px;
+  font-size: 0.9rem;
+}
+
+/* Header */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(6, 37, 92, 0.95);
+  backdrop-filter: blur(6px);
+}
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 20px;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.brand-logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+.brand-name {
+  color: var(--white);
+  font-weight: 800;
+  letter-spacing: 1px;
+  font-size: 1.1rem;
+}
+.nav {
+  display: flex;
+  gap: 24px;
+}
+.nav a {
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+.nav a:hover { color: var(--white); }
+.header-call { white-space: nowrap; }
+
+/* Hero */
+.hero {
+  background: linear-gradient(180deg, var(--deep-blue) 0%, var(--brand-blue) 40%, var(--sky-blue) 75%, var(--teal) 100%);
+  color: var(--white);
+  text-align: center;
+  padding: 70px 20px 90px;
+}
+.hero-logo {
+  width: 110px;
+  height: 110px;
+  margin: 0 auto 20px;
+  border-radius: 24px;
+  box-shadow: var(--shadow);
+  object-fit: cover;
+}
+.hero h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  margin: 0 0 14px;
+  font-weight: 800;
+}
+.hero-sub {
+  max-width: 560px;
+  margin: 0 auto 32px;
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+.hero-actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Features */
+.features {
+  padding: 60px 20px;
+  background: var(--light-bg);
+}
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+}
+.feature-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 28px 22px;
+  box-shadow: var(--shadow);
+  text-align: center;
+}
+.feature-icon {
+  font-size: 2.2rem;
+  margin-bottom: 12px;
+}
+.feature-card h3 {
+  margin: 0 0 8px;
+  font-size: 1.05rem;
+}
+.feature-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+/* Pricing */
+.pricing {
+  padding: 70px 20px;
+  text-align: center;
+}
+.section-title {
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
+  margin: 0 0 8px;
+  font-weight: 800;
+  color: var(--deep-blue);
+}
+.section-title.light { color: var(--white); }
+.section-sub {
+  color: var(--muted);
+  margin: 0 0 32px;
+}
+.section-sub.light { color: rgba(255, 255, 255, 0.85); }
+.pricing-card {
+  max-width: 560px;
+  margin: 0 auto;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  background: var(--white);
+  border: 1px solid rgba(6, 37, 92, 0.08);
+}
+.price-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.price-table tr {
+  border-bottom: 1px solid rgba(6, 37, 92, 0.08);
+}
+.price-table tr:last-child { border-bottom: none; }
+.price-table tr:nth-child(even) { background: var(--light-bg); }
+.price-table td {
+  padding: 16px 24px;
+  text-align: left;
+  font-weight: 600;
+  color: var(--ink);
+}
+.price-table td.price {
+  text-align: right;
+  color: var(--brand-blue);
+  font-weight: 800;
+  white-space: nowrap;
+}
+.pricing-cta { margin-top: 32px; }
+
+/* Warranty */
+.warranty {
+  background: linear-gradient(135deg, var(--brand-blue), var(--teal));
+  color: var(--white);
+  padding: 60px 20px;
+}
+.warranty-inner {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: left;
+}
+.badge-circle {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: var(--white);
+  color: var(--brand-blue);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow);
+  border: 4px solid rgba(255, 255, 255, 0.6);
+  flex-shrink: 0;
+}
+.badge-days {
+  font-size: 2.4rem;
+  font-weight: 900;
+  line-height: 1;
+}
+.badge-label {
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+.warranty-text { max-width: 480px; }
+.warranty-text h2 {
+  margin: 0 0 12px;
+  font-size: 1.6rem;
+}
+.warranty-text p { margin: 0 0 8px; color: rgba(255, 255, 255, 0.92); }
+.terms-note { font-size: 0.85rem; font-style: italic; opacity: 0.8; }
+
+/* Contact */
+.contact {
+  background: var(--deep-blue);
+  color: var(--white);
+  text-align: center;
+  padding: 70px 20px;
+}
+.contact-actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Footer */
+.site-footer {
+  background: #041938;
+  color: rgba(255, 255, 255, 0.75);
+  text-align: center;
+  padding: 32px 20px;
+}
+.footer-logo {
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 12px;
+  border-radius: 10px;
+}
+.footer-inner p { margin: 4px 0; font-size: 0.9rem; }
+.footer-phone a { font-weight: 700; color: var(--teal); }
+
+/* Floating call button */
+.floating-call {
+  position: fixed;
+  bottom: 22px;
+  right: 22px;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ff8a3d, #ff6b6b);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  box-shadow: 0 8px 24px rgba(255, 107, 107, 0.45);
+  z-index: 60;
+  animation: pulse 2.2s infinite;
+}
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(255, 107, 107, 0.5); }
+  70% { box-shadow: 0 0 0 16px rgba(255, 107, 107, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(255, 107, 107, 0); }
+}
+
+@media (max-width: 640px) {
+  .nav { display: none; }
+  .warranty-inner { text-align: center; justify-content: center; }
+}
