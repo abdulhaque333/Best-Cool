@@ -339,8 +339,8 @@ a { text-decoration: none; color: inherit; }
   background: var(--white);
   border: 1px solid rgba(6, 37, 92, 0.08);
   border-radius: var(--radius);
-  padding: 26px 22px;
-  box-shadow: var(--shadow);
+  padding: 20px 18px;
+  box-shadow: 0 6px 18px rgba(6, 37, 92, 0.08);
   display: flex;
   flex-direction: column;
   transition: transform 0.15s ease, box-shadow 0.15s ease;
@@ -365,23 +365,23 @@ a { text-decoration: none; color: inherit; }
   border-radius: 999px;
   box-shadow: 0 4px 12px rgba(255, 107, 107, 0.4);
 }
-.service-icon { font-size: 2rem; margin-bottom: 10px; }
+.service-icon { font-size: 1.6rem; margin-bottom: 8px; }
 .service-card h3 {
-  margin: 0 0 6px;
-  font-size: 1.08rem;
+  margin: 0 0 4px;
+  font-size: 1rem;
   color: var(--deep-blue);
 }
 .service-card p {
-  margin: 0 0 14px;
+  margin: 0 0 12px;
   color: var(--muted);
-  font-size: 0.9rem;
+  font-size: 0.84rem;
   flex-grow: 1;
 }
 .service-price {
-  font-size: 1.35rem;
+  font-size: 1.2rem;
   font-weight: 800;
   color: var(--brand-blue);
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 .book-link {
   display: inline-block;
@@ -390,8 +390,8 @@ a { text-decoration: none; color: inherit; }
   color: #128c4b;
   border: 1px solid rgba(37, 211, 102, 0.45);
   font-weight: 700;
-  font-size: 0.9rem;
-  padding: 9px 18px;
+  font-size: 0.82rem;
+  padding: 7px 15px;
   border-radius: 999px;
   transition: background 0.15s ease, color 0.15s ease;
 }
@@ -633,6 +633,44 @@ a { text-decoration: none; color: inherit; }
   .feature-icon { width: 44px; height: 44px; font-size: 1.25rem; }
   .feature-card h3 { font-size: 1rem; }
   .feature-card p { font-size: 0.85rem; }
+
+  /* Compact service rate rows */
+  .services-grid { gap: 10px; }
+  .service-card {
+    display: grid;
+    grid-template-areas:
+      "icon title price"
+      "icon desc  book";
+    grid-template-columns: 44px 1fr auto;
+    align-items: center;
+    column-gap: 12px;
+    row-gap: 4px;
+    padding: 14px;
+    border-radius: 14px;
+  }
+  .service-icon {
+    grid-area: icon;
+    margin: 0;
+    font-size: 1.35rem;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(30, 136, 199, 0.1);
+    border-radius: 12px;
+  }
+  .service-card h3 { grid-area: title; margin: 0; font-size: 0.92rem; }
+  .service-card p { grid-area: desc; margin: 0; font-size: 0.75rem; line-height: 1.4; }
+  .service-price { grid-area: price; margin: 0; font-size: 1rem; text-align: right; white-space: nowrap; }
+  .book-link {
+    grid-area: book;
+    justify-self: end;
+    align-self: start;
+    padding: 5px 12px;
+    font-size: 0.74rem;
+  }
+  .popular-badge { top: -9px; right: 10px; font-size: 0.6rem; padding: 4px 10px; }
 }
 
 @media (max-width: 768px) {
