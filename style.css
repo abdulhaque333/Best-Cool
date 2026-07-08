@@ -31,7 +31,10 @@ a { text-decoration: none; color: inherit; }
 
 /* Buttons */
 .btn {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
   padding: 14px 28px;
   border-radius: 999px;
   font-weight: 700;
@@ -70,6 +73,10 @@ a { text-decoration: none; color: inherit; }
   color: var(--brand-blue);
   padding: 10px 20px;
   font-size: 0.9rem;
+}
+.btn-call .btn-icon {
+  width: 16px;
+  height: 16px;
 }
 
 /* Header */
@@ -552,6 +559,10 @@ a { text-decoration: none; color: inherit; }
   box-shadow: 0 8px 24px rgba(255, 107, 107, 0.45);
   z-index: 60;
   animation: pulse 2.2s infinite;
+}
+.floating-call svg {
+  width: 26px;
+  height: 26px;
 }
 @keyframes pulse {
   0% { box-shadow: 0 0 0 0 rgba(255, 107, 107, 0.5); }
