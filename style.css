@@ -218,30 +218,42 @@ a { text-decoration: none; color: inherit; }
   color: rgba(255, 255, 255, 0.95);
 }
 
-/* Features */
+/* Features / Why us */
 .features {
-  padding: 60px 20px;
+  padding: 70px 20px;
   background: var(--light-bg);
+  text-align: center;
 }
 .features-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 22px;
+  margin-top: 40px;
 }
 .feature-card {
   background: var(--white);
+  border: 1px solid rgba(6, 37, 92, 0.06);
   border-radius: var(--radius);
-  padding: 28px 22px;
+  padding: 26px 22px;
   box-shadow: var(--shadow);
-  text-align: center;
+  text-align: left;
 }
 .feature-icon {
-  font-size: 2.2rem;
-  margin-bottom: 12px;
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  background: rgba(30, 136, 199, 0.1);
+  border: 1px solid rgba(30, 136, 199, 0.18);
+  border-radius: 14px;
+  margin-bottom: 16px;
 }
 .feature-card h3 {
   margin: 0 0 8px;
-  font-size: 1.05rem;
+  font-size: 1.1rem;
+  color: var(--deep-blue);
 }
 .feature-card p {
   margin: 0;
@@ -616,6 +628,11 @@ a { text-decoration: none; color: inherit; }
   .warranty-inner { text-align: center; justify-content: center; }
   .steps-grid { grid-template-columns: 1fr; gap: 40px; }
   .steps-grid::before { display: none; }
+  .features-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+  .feature-card { padding: 20px 16px; }
+  .feature-icon { width: 44px; height: 44px; font-size: 1.25rem; }
+  .feature-card h3 { font-size: 1rem; }
+  .feature-card p { font-size: 0.85rem; }
 }
 
 @media (max-width: 768px) {
