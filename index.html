@@ -12,6 +12,9 @@
 
 <header class="site-header" id="top">
   <div class="container header-inner">
+    <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
     <a class="brand" href="#top">
       <img src="assets/logo.jpg" alt="Best Cool logo" class="brand-logo">
       <span class="brand-name">BEST&nbsp;COOL</span>
@@ -19,11 +22,19 @@
     <nav class="nav">
       <a href="#services">Services</a>
       <a href="#process">Process</a>
+      <a href="#reviews">Reviews</a>
       <a href="#warranty">Warranty</a>
       <a href="#contact">Contact</a>
     </nav>
     <a href="tel:+9609250333" class="btn btn-call header-call">Call Now</a>
   </div>
+  <nav class="mobile-nav" id="mobileNav">
+    <a href="#services">❄️ Services &amp; Rates</a>
+    <a href="#process">🔁 How It Works</a>
+    <a href="#reviews">⭐ Reviews</a>
+    <a href="#warranty">🛡️ Warranty</a>
+    <a href="#contact">📞 Contact</a>
+  </nav>
 </header>
 
 <section id="services" class="pricing">
@@ -31,6 +42,11 @@
     <span class="pill">SERVICES &amp; RATES</span>
     <h2 class="section-title">Clear Prices. No Surprises.</h2>
     <p class="section-sub">All prices in Maldivian Rufiyaa (MVR). Terms &amp; conditions apply.</p>
+    <div class="search-wrap">
+      <span class="search-icon">🔍</span>
+      <input type="search" id="serviceSearch" class="search-input" placeholder="Search a service… e.g. gas, leakage, installation" aria-label="Search services">
+    </div>
+    <p class="no-results" id="noResults" hidden>No service found. <a href="https://wa.me/9609250333?text=Hi%20Best%20Cool!%20I%20need%20help%20with%20my%20AC." target="_blank" rel="noopener">Message us on WhatsApp</a> — we'll help!</p>
     <div class="services-grid">
       <div class="service-card popular">
         <span class="popular-badge">MOST POPULAR</span>
@@ -239,6 +255,35 @@
 
 <script>
 document.getElementById('year').textContent = new Date().getFullYear();
+
+var menuToggle = document.getElementById('menuToggle');
+var mobileNav = document.getElementById('mobileNav');
+menuToggle.addEventListener('click', function () {
+  var open = mobileNav.classList.toggle('open');
+  menuToggle.classList.toggle('open', open);
+  menuToggle.setAttribute('aria-expanded', open);
+});
+mobileNav.addEventListener('click', function (e) {
+  if (e.target.tagName === 'A') {
+    mobileNav.classList.remove('open');
+    menuToggle.classList.remove('open');
+    menuToggle.setAttribute('aria-expanded', 'false');
+  }
+});
+
+var searchInput = document.getElementById('serviceSearch');
+var serviceCards = document.querySelectorAll('.service-card');
+var noResults = document.getElementById('noResults');
+searchInput.addEventListener('input', function () {
+  var q = searchInput.value.trim().toLowerCase();
+  var visible = 0;
+  serviceCards.forEach(function (card) {
+    var match = card.textContent.toLowerCase().indexOf(q) !== -1;
+    card.style.display = match ? '' : 'none';
+    if (match) visible++;
+  });
+  noResults.hidden = visible > 0;
+});
 </script>
 </body>
 </html>
