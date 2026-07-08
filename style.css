@@ -497,6 +497,86 @@ a { text-decoration: none; color: inherit; }
   font-size: 0.9rem;
 }
 
+/* Promise */
+.promise {
+  padding: 70px 20px;
+  background: var(--light-bg);
+  text-align: center;
+}
+.promise-list {
+  display: grid;
+  gap: 18px;
+  max-width: 720px;
+  margin: 40px auto 0;
+}
+.promise-card {
+  background: var(--white);
+  border: 1px solid rgba(6, 37, 92, 0.07);
+  border-radius: var(--radius);
+  padding: 28px 26px;
+  box-shadow: var(--shadow);
+  text-align: left;
+}
+.promise-card p {
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--muted);
+}
+.promise-card strong { color: var(--deep-blue); }
+
+/* FAQ */
+.faq {
+  padding: 70px 20px;
+  background: var(--white);
+  text-align: center;
+}
+.faq-list {
+  max-width: 720px;
+  margin: 40px auto 0;
+  text-align: left;
+}
+.faq-list details {
+  background: var(--light-bg);
+  border: 1px solid rgba(6, 37, 92, 0.07);
+  border-radius: 14px;
+  margin-bottom: 12px;
+  overflow: hidden;
+}
+.faq-list summary {
+  cursor: pointer;
+  list-style: none;
+  padding: 18px 48px 18px 20px;
+  font-weight: 700;
+  color: var(--deep-blue);
+  position: relative;
+}
+.faq-list summary::-webkit-details-marker { display: none; }
+.faq-list summary::after {
+  content: "+";
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--sky-blue);
+  transition: transform 0.2s ease;
+}
+.faq-list details[open] summary::after {
+  transform: translateY(-50%) rotate(45deg);
+}
+.faq-list details p {
+  margin: 0;
+  padding: 0 20px 18px;
+  color: var(--muted);
+  line-height: 1.65;
+}
+.faq-list details a {
+  color: var(--brand-blue);
+  font-weight: 700;
+}
+
 /* Warranty */
 .warranty {
   background: linear-gradient(135deg, var(--brand-blue), var(--teal));
